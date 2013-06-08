@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="authentication">
+	<name>PLG_AUTHENTICATION_PHPBB3AUTH</name>
+	<author>Gerd Bartelt</author>
+	<creationDate>June 2013</creationDate>
+	<copyright>Copyright (C) 2013 Gerd Bartelt. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>infoATsebulli.com</authorEmail>
+	<authorUrl>www.sebulli.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_AUTH_PHPBB3AUTH_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="phpbb3auth">phpbb3auth.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB/en-GB.plg_authentication_phpbb3auth.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_authentication_phpbb3auth.sys.ini</language>
+	</languages>
+</extension>
