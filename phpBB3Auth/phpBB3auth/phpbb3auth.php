@@ -177,7 +177,7 @@ class PlgAuthenticationPhpbb3auth extends JPlugin
 		$db		= JFactory::getDbo();
 		$query	= $db->getQuery(true)
 			->select('username, user_password, user_email, user_type')
-			->from($table_prefix . 'users')
+			->from($this->$table_prefix . 'users')
 			->where('username=' . $db->quote($credentials['username']));
 
 		$db->setQuery($query);
