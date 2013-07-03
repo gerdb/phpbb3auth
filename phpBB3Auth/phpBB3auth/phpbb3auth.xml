@@ -7,12 +7,19 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>infoATsebulli.com</authorEmail>
 	<authorUrl>www.sebulli.com</authorUrl>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<description>PLG_AUTH_PHPBB3AUTH_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="phpbb3auth">phpbb3auth.php</filename>
 		<filename>index.html</filename>
 	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="phpbb3_table_prefix" type="text" default="phpbb_" label="PLG_PHPBB3AUTH_TABLE_PREFIX" description="PLG_PHPBB3AUTH_TABLE_PREFIX_DESCRIPTION" />
+			</fieldset>
+		</fields>
+	</config>
 	<languages>
 		<language tag="en-GB">en-GB/en-GB.plg_authentication_phpbb3auth.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_authentication_phpbb3auth.sys.ini</language>
