@@ -35,7 +35,7 @@ class PlgAuthenticationPhpbb3auth extends JPlugin
      */
     function PlgAuthenticationPhpbb3auth(& $subject, $config) {
         parent::__construct($subject, $config);
-        $table_prefix = $config->get('phpbb3_table_prefix', '');
+        $this->table_prefix = json_decode($config['params'])->phpbb3_table_prefix;
     }
 
 	/**
@@ -175,9 +175,17 @@ class PlgAuthenticationPhpbb3auth extends JPlugin
 
 		// Get a database object
 		$db		= JFactory::getDbo();
+
+		$result = $db->getTableList();
+		if (!in_array($this->table_prefix . 'users', $result)) {
+			$response->status = JAuthentication::STATUS_FAILURE;
+			$response->error_message = "Table ".$this->table_prefix . 'users'." does not exist";
+			return false;
+		}
+
 		$query	= $db->getQuery(true)
 			->select('username, user_password, user_email, user_type')
-			->from($this->$table_prefix . 'users')
+			->from($this->table_prefix . 'users')
 			->where('username=' . $db->quote($credentials['username']));
 
 		$db->setQuery($query);
